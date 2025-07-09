@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Snooze - Scroll-worthy Stories</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap"
     rel="stylesheet">
@@ -54,11 +55,23 @@
     }
 
     .logo {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #00AEEF;
+      display: flex;
+      align-items: center;
       text-decoration: none;
-      text-shadow: 0 0 20px rgba(0, 174, 239, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+      filter: drop-shadow(0 0 10px rgba(0, 174, 239, 0.5));
+      transition: all 0.3s ease;
+      max-width: 150px;
+    }
+
+    .logo:hover img {
+      filter: drop-shadow(0 0 20px rgba(0, 174, 239, 0.8));
+      transform: scale(1.05);
     }
 
     .nav-links {
@@ -241,6 +254,16 @@
       background: linear-gradient(180deg, #0B0C10 0%, #1a1a1a 100%);
       position: relative;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .phone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 27px;
     }
 
     .scroll-preview {
@@ -666,6 +689,12 @@
       font-size: 0.9rem;
     }
 
+    /* App Store Badges */
+    .app-store-badges img:hover {
+      opacity: 1 !important;
+      transform: translateY(-2px);
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
       .nav-links {
@@ -766,7 +795,9 @@
   <!-- Navigation -->
   <nav id="navbar">
     <div class="nav-container">
-      <a href="#" class="logo">SNOOZE</a>
+      <a href="#" class="logo">
+        <img src="images/logoo.jpg" alt="Snooze Logo" style="height: 40px; width: auto;">
+      </a>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#how-it-works">How It Works</a></li>
@@ -787,7 +818,7 @@
         </div>
         <div class="phone-mockup">
           <div class="phone-screen">
-            <div class="scroll-preview"></div>
+            <img src="images/phone-screen.svg" alt="Snooze App Screen">
           </div>
         </div>
       </div>
@@ -798,10 +829,10 @@
         <div class="app-store-badges" style="margin-top: 2rem;">
           <span style="color: #cccccc; font-size: 0.9rem;">Coming soon on:</span>
           <div style="display: flex; gap: 1rem; margin-top: 1rem; justify-content: flex-start;">
-            <img src="https://via.placeholder.com/150x50/002244/00AEEF?text=Google+Play" alt="Google Play"
-              style="height: 50px; border-radius: 8px; opacity: 0.7;">
-            <img src="https://via.placeholder.com/150x50/002244/00AEEF?text=App+Store" alt="App Store"
-              style="height: 50px; border-radius: 8px; opacity: 0.7;">
+            <img src="images/google-play-badge.svg" alt="Google Play"
+              style="height: 50px; border-radius: 8px; opacity: 0.7; transition: opacity 0.3s ease; cursor: pointer;">
+            <img src="images/app-store-badge.svg" alt="App Store"
+              style="height: 50px; border-radius: 8px; opacity: 0.7; transition: opacity 0.3s ease; cursor: pointer;">
           </div>
         </div>
       </div>

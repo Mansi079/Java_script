@@ -1,0 +1,18 @@
+<svg width="150" height="45" viewBox="0 0 150 45" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="appStoreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#002244;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E90FF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="150" height="45" fill="url(#appStoreGradient)" rx="8"/>
+  
+  <!-- Apple logo -->
+  <path d="M12 8C12 8 14 6 16 8C18 10 16 12 16 12C16 12 18 14 16 16C14 18 12 16 12 16C12 16 10 18 8 16C6 14 8 12 8 12C8 12 6 10 8 8C10 6 12 8 12 8z" fill="#ffffff"/>
+  
+  <!-- Text -->
+  <text x="25" y="18" font-family="Arial, sans-serif" font-size="8" fill="#ffffff">Download on the</text>
+  <text x="25" y="32" font-family="Arial, sans-serif" font-size="12" font-weight="600" fill="#ffffff">App Store</text>
+</svg>
