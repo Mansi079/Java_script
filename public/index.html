@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Codespace</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 600px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .feature-list {
+      text-align: left;
+      margin: 20px 0;
+    }
+
+    .feature-list li {
+      margin: 10px 0;
+      padding: 5px 0;
+    }
+
+    .btn {
+      background: #667eea;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #5a67d8;
+    }
+
+    #output {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f7f7f7;
+      border-radius: 5px;
+      min-height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🚀 JavaScript Codespace Ready!</h1>
+    <p>Your GitHub Codespace is set up with a complete JavaScript development environment.</p>
+
+    <h3>Features Included:</h3>
+    <ul class="feature-list">
+      <li>✅ Node.js 20 with npm</li>
+      <li>✅ Express.js server</li>
+      <li>✅ ESLint for code linting</li>
+      <li>✅ Prettier for code formatting</li>
+      <li>✅ Jest for testing</li>
+      <li>✅ Nodemon for development</li>
+      <li>✅ Live Server for static files</li>
+      <li>✅ VS Code extensions pre-installed</li>
+    </ul>
+
+    <button class="btn" onclick="testAPI()">Test API Connection</button>
+    <button class="btn" onclick="runExample()">Run JavaScript Example</button>
+
+    <div id="output"></div>
+  </div>
+
+  <script>
+    async function testAPI() {
+      const output = document.getElementById('output');
+      try {
+        const response = await fetch('/api/health');
+        const data = await response.json();
+        output.innerHTML = `
+                    <h4>API Response:</h4>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                `;
+      } catch (error) {
+        output.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+      }
+    }
+
+    function runExample() {
+      const output = document.getElementById('output');
+
+      // Example JavaScript code
+      const numbers = [1, 2, 3, 4, 5];
+      const doubled = numbers.map(n => n * 2);
+      const sum = doubled.reduce((acc, n) => acc + n, 0);
+
+      output.innerHTML = `
+                <h4>JavaScript Example:</h4>
+                <p><strong>Original:</strong> [${numbers.join(', ')}]</p>
+                <p><strong>Doubled:</strong> [${doubled.join(', ')}]</p>
+                <p><strong>Sum:</strong> ${sum}</p>
+                <p><strong>Current Time:</strong> ${new Date().toLocaleString()}</p>
+            `;
+    }
+
+    // Run example on page load
+    window.onload = () => {
+      runExample();
+    };
+  </script>
+</body>
+
+</html>
